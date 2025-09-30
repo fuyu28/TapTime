@@ -3,9 +3,21 @@ To install dependencies:
 bun install
 ```
 
-To run:
+Build the PWA frontend:
+```sh
+bun run client:build
+```
+
+To run the Hono backend (serves the built frontend on `/`):
 ```sh
 bun run dev
 ```
 
-open http://localhost:3000
+Open http://localhost:3000
+
+During development you can run the React dev server with hot reload:
+```sh
+bun run client:dev
+```
+
+It proxies API requests to the Bun server.
