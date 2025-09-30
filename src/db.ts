@@ -1,5 +1,5 @@
-import Database from "better-sqlite3";
-import { drizzle } from "drizzle-orm/better-sqlite3";
+import { Database } from "bun:sqlite";
+import { drizzle } from "drizzle-orm/bun-sqlite";
 import { mkdirSync } from "node:fs";
 import { dirname } from "node:path";
 
@@ -8,7 +8,7 @@ const DB_PATH = DB_URL.startsWith("file:") ? DB_URL.replace("file:", "") : DB_UR
 
 mkdirSync(dirname(DB_PATH), { recursive: true });
 
-const sqlite = new Database(DB_PATH);
+const sqlite = new Database(DB_PATH, { create: true });
 sqlite.pragma("journal_mode = WAL");
 
 export const db = drizzle(sqlite);
