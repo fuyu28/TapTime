@@ -3,7 +3,6 @@
     // bun / hono デフォルト
     "strict": true,
     "jsx": "react-jsx",
-    "jsxImportSource": "hono/jsx",
     // 追加分
     "target": "es2022",
     "module": "esnext",
@@ -15,5 +14,5 @@
     "resolveJsonModule": true,
     "noEmit": true
   },
-  "include": ["src", "drizzle.config.ts"]
+  "include": ["src", "drizzle.config.ts", "vite.config.ts", "index.html"]
 }
